@@ -28,6 +28,15 @@ counter.decrement(); // Decrement: 1
 counter.reset();     // Reset: 0
 
 
+const counter1 = createCounter();
+const counter2 = createCounter();
+
+counter1.increment(); // 1
+counter2.increment(); // 1
+counter1.increment(); // 2
+counter2.value();     // 1
+
+
 
 // - createCounter() creates a function and returns it.
 // - When we call counter(), JS **remembers** `count` because of closure.
