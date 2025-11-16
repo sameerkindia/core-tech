@@ -30,3 +30,13 @@ async function testAll() {
     console.log("❌ Promise.all failed:", error);
   }
 }
+
+async function testAllSettled() {
+  console.log("\n🟣 Testing Promise.allSettled\n");
+  const results = await Promise.allSettled([
+    fakeAPI("Likes", 500),
+    fakeAPI("Followers", 800, true),
+    fakeAPI("Analytics", 1000),
+  ]);
+  console.log("📊 All Settled Results:", results);
+}
