@@ -40,3 +40,18 @@ async function testAllSettled() {
   ]);
   console.log("📊 All Settled Results:", results);
 }
+
+
+async function testRace() {
+  console.log("\n🏁 Testing Promise.race\n");
+  try {
+    const winner = await Promise.race([
+      fakeAPI("Server A", 2000),
+      fakeAPI("Server B", 1200),
+      fakeAPI("Server C", 3000),
+    ]);
+    console.log("🎉 Fastest Response:", winner);
+  } catch (error) {
+    console.log("❌ Race failed:", error);
+  }
+}
