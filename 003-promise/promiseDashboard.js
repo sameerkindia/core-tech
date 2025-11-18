@@ -55,3 +55,18 @@ async function testRace() {
     console.log("❌ Race failed:", error);
   }
 }
+
+
+async function testAny() {
+  console.log("\n🟢 Testing Promise.any\n");
+  try {
+    const firstSuccess = await Promise.any([
+      fakeAPI("Mirror 1", 1000, true),
+      fakeAPI("Mirror 2", 2000),
+      fakeAPI("Mirror 3", 1500, true),
+    ]);
+    console.log("✅ First Successful Response:", firstSuccess);
+  } catch (error) {
+    console.log("❌ All failed:", error.errors);
+  }
+}
