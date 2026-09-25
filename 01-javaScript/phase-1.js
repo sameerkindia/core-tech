@@ -40,4 +40,29 @@ function stringReversal(text=""){
     return reversedString
 }
 
-console.log(stringReversal("Sameer"))
+// console.log(stringReversal("Sameer"))
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Challenge 3 Palindrome Checker
+
+function palindromeChecker(word=""){
+    let cleanWord = word.toLowerCase().split(" ").join('')
+    let lastIndex = cleanWord.length - 1
+    let isPalindrome = false
+
+    for(let i = 0 ; i < Math.round(cleanWord.length / 2); i++){
+        if(cleanWord[i] !== cleanWord[lastIndex]){
+            return "this is not a palindrome word"
+        }
+        isPalindrome = true
+        lastIndex--
+    }
+
+    if(isPalindrome === true){
+        return "This a palindrome word"
+    }
+}
+
+// console.log(palindromeChecker("pat t ap"))
+// console.log(palindromeChecker("No lemon, no melon"))

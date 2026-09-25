@@ -47,3 +47,27 @@
 #     return reversed_str
 
 # print(reverse_string("hello"))
+
+
+
+
+#####################################################################################
+# Challenge 3 Palindrome Checker
+
+def palindrome_checker(word=""):
+    clean_word = word.lower().replace(' ', '')
+    last_index = len(clean_word) - 1
+
+    for char in clean_word:
+        if char is not clean_word[last_index]:
+            return "This is not a palindrome word"
+
+        last_index -= 1
+    else :
+        return "This is a Palindrome word"
+
+# print(palindrome_checker("pattap"))
+# print(palindrome_checker("pat t ap"))
+# print(palindrome_checker("123421"))
+# print(palindrome_checker("123ab321"))
+# print(palindrome_checker("No lemon, no melon"))
