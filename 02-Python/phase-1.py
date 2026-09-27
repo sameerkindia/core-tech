@@ -127,4 +127,34 @@ def factorial_recursive(n):
 
 
 
-print(factorial(5))
+# print(factorial(5))
+
+
+
+#####################################################################################
+# Challenge 5 (Max & Min)
+
+def custom_min(arr=[]):
+    min_num = arr[0]
+
+    for num in arr:
+        # print(f'{min_num} and {num} and min num is {min_num}')
+        if min_num > num:
+            min_num = num
+
+    return min_num
+
+def custom_max(arr=[]):
+    max_num = arr[0]
+
+    for num in arr:
+        if max_num < num:
+            max_num = num
+        
+
+    return max_num
+
+print(custom_min([10,20,2,3,4,5]))
+print(custom_min([-50, -10, -2, -100]))
+print(custom_max([10,20,2,3,4,5]))
+print(custom_max([-50, -10, -2, -100]))

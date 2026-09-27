@@ -129,3 +129,48 @@ function factorialRecursive(n) {
 // console.log(factorial(4))
 // console.log(factorial(5))
 // console.log(factorial(10))
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Challenge 5 (Max & Min)
+
+
+function customMin(arr=[]){
+    let minNum = arr[0]
+
+    for(let i = 1; i < arr.length ; i++){
+        // console.log(`${minNum} and ${arr[i]}`)
+        if(minNum > arr[i]){
+            minNum = arr[i]
+        }
+    }
+
+    return minNum
+}
+
+function customMax(arr=[]){
+    let maxNum = arr[0]
+
+    for(let i = 1; i < arr.length ; i++){
+        // console.log(`${maxNum} and ${arr[i]}`)
+        if(maxNum < arr[i]){
+            maxNum = arr[i]
+        }
+    }
+
+    return maxNum
+}
+
+console.log(customMin([10,20,2,3,4,5]))
+console.log(customMin([-50, -10, -2, -100]))
+console.log(customMax([10,20,2,3,4,5]))
+console.log(customMax([-50, -10, -2, -100]))
