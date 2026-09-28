@@ -154,7 +154,87 @@ def custom_max(arr=[]):
 
     return max_num
 
-print(custom_min([10,20,2,3,4,5]))
-print(custom_min([-50, -10, -2, -100]))
-print(custom_max([10,20,2,3,4,5]))
-print(custom_max([-50, -10, -2, -100]))
+# print(custom_min([10,20,2,3,4,5]))
+# print(custom_min([-50, -10, -2, -100]))
+# print(custom_max([10,20,2,3,4,5]))
+# print(custom_max([-50, -10, -2, -100]))
+
+
+
+
+
+
+
+#####################################################################################
+# Challenge 6 (Sum of Digits)
+
+def sum_of_digits(num):
+    sum = 0
+    num_list = str(num)
+    # print(num_list)
+
+
+    for num in num_list:
+        try :
+            num_str = int(num)
+            if type(num_str) is str:
+                continue
+            else :
+                sum += int(num)
+        except :
+            continue
+
+    return sum
+
+# print(sum_of_digits(1234))
+# print(sum_of_digits(-12345678))
+
+
+def sum_of_digits_2(num):
+    num = abs(num)
+    total_sum = 0
+
+    while num > 0:
+        total_sum += num % 10
+
+        num = num // 10
+
+    return total_sum
+
+
+
+# print(sum_of_digits_2(1234))
+# print(sum_of_digits_2(-123456789))
+
+
+
+
+
+
+
+
+
+
+
+
+#####################################################################################
+# Challenge 7 (Vowel & Consonant Counter)
+
+import re
+
+def vowel_and_consonant_counter(text=''):
+    cleanText = re.sub(r'[^a-zA-Z]', '', text).lower()
+    vowels = 0
+    consonants = 0
+
+    for char in cleanText:
+        if char == 'a' or char == 'e' or char == 'i' or char == 'o' or char == 'u':
+            vowels+= 1
+        else:
+            consonants+= 1
+
+    return vowels, consonants
+    
+
+print(vowel_and_consonant_counter("@!sameerKhan123"))
+print(vowel_and_consonant_counter("12345 !@#$"))
