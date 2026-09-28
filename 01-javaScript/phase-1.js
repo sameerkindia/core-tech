@@ -170,7 +170,81 @@ function customMax(arr=[]){
     return maxNum
 }
 
-console.log(customMin([10,20,2,3,4,5]))
-console.log(customMin([-50, -10, -2, -100]))
-console.log(customMax([10,20,2,3,4,5]))
-console.log(customMax([-50, -10, -2, -100]))
+// console.log(customMin([10,20,2,3,4,5]))
+// console.log(customMin([-50, -10, -2, -100]))
+// console.log(customMax([10,20,2,3,4,5]))
+// console.log(customMax([-50, -10, -2, -100]))
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Challenge 6 (Sum of Digits)
+
+function sumOfDigits(num=123){
+    let sum = 0;
+    let numArr = num.toString().split('')
+    
+    for(let i = 0; i < numArr.length; i++){
+        if(Number(numArr[i])){
+            sum += Number(numArr[i])
+        }
+    }
+
+    return sum
+}
+
+function sumOfDigits2(num){
+   num = Math.abs(num)
+   let totalSum = 0;
+   
+   while(num > 0) {
+    totalSum += num % 10
+
+    num = Math.floor(num / 10)
+   }
+
+   return totalSum
+
+}
+
+
+// console.log(sumOfDigits(1234))
+// console.log(sumOfDigits(-12345678))
+// console.log(sumOfDigits2(12345))
+// console.log(sumOfDigits2(-12345678))
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Challenge 7 (Vowel & Consonant Counter)
+
+function vowelAndConsonantCounter(text=""){
+    let cleanText = text.replaceAll(/[^a-zA-Z]/g, "").toLowerCase()
+
+    let vowels = ''
+    let consonants = ''
+
+    for(let i = 0; i < cleanText.length; i++){
+        let currentChar = cleanText[i]
+        if(currentChar === 'a' || currentChar === 'e' || currentChar === 'i' || currentChar === 'o' || currentChar === 'u') {
+            vowels++
+        } else {
+            consonants++
+        }
+    }
+
+    return {vowels, consonants}
+
+}
+
+console.log(vowelAndConsonantCounter("@!sameerKhan123"))
+console.log(vowelAndConsonantCounter("12345 !@#$"))
