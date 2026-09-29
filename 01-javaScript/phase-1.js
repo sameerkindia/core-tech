@@ -246,5 +246,33 @@ function vowelAndConsonantCounter(text=""){
 
 }
 
-console.log(vowelAndConsonantCounter("@!sameerKhan123"))
-console.log(vowelAndConsonantCounter("12345 !@#$"))
+// console.log(vowelAndConsonantCounter("@!sameerKhan123"))
+// console.log(vowelAndConsonantCounter("12345 !@#$"))
+
+
+function countVowelsConsonants(text){
+    vowels = ['a','e','i','o','u']
+    vCount = 0
+    cCount = 0
+
+    const lowerText = text.toLowerCase()
+
+    for(let i = 0; i < lowerText.length; i++){
+        let char = lowerText[i]
+
+        if(/[a-z]/.test(char)) {
+            if(vowels.includes(char)){
+                vCount++
+            } else {
+                cCount++
+            }
+        }
+    }
+
+    return { vowels: vCount, consonants: cCount };
+}
+
+// const result = countVowelsConsonants("Hello World 123!");
+// const result = countVowelsConsonants("12345 !@#$");
+// const result = countVowelsConsonants("");
+// console.log(`Vowels: ${result.vowels}, Consonants: ${result.consonants}`);
