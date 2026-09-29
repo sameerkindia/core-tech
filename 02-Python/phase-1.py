@@ -236,5 +236,30 @@ def vowel_and_consonant_counter(text=''):
     return vowels, consonants
     
 
-print(vowel_and_consonant_counter("@!sameerKhan123"))
-print(vowel_and_consonant_counter("12345 !@#$"))
+# print(vowel_and_consonant_counter("@!sameerKhan123"))
+# print(vowel_and_consonant_counter("12345 !@#$"))
+
+
+def count_vowels_consonants(text=""):
+    vowels = 'aeiou'
+    v_count = 0
+    c_count = 0
+
+
+    for char in text.lower():
+
+        if char.isalpha():
+
+            if char in vowels:
+                v_count += 1
+            else:
+                c_count += 1
+
+    
+    return v_count, c_count
+
+
+# v, c = count_vowels_consonants("Hello World 123!")
+# v, c = count_vowels_consonants("12345 !@#$")
+# v, c = count_vowels_consonants("")
+# print(f"Vowels: {v}, Consonants: {c}")
